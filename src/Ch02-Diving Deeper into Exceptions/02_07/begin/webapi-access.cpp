@@ -58,6 +58,10 @@ int main()
     {
         std::cerr << "NetworkError: " << e.what() << std::endl;
     }
+    catch (const DataIntegrityError &e)
+    {
+        std::cerr << "DataIntegrityError: " << e.what() << std::endl;
+    }
     catch (const std::exception &e)
     {
         std::cerr << "Standard exception: " << e.what() << std::endl;
