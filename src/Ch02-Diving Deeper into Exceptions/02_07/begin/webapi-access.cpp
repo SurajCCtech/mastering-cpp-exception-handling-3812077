@@ -48,19 +48,19 @@ int main()
 {
     try
     {
-        accessAPI(ErrorType::Authentication);
+        accessAPI(ErrorType::DataIntegrity);
     }
-    catch (const std::exception &e)
+    catch (const AuthenticationError &e)
     {
-        std::cerr << "Standard exception: " << e.what() << std::endl;
+        std::cerr << "AuthenticationError: " << e.what() << std::endl;
     }
     catch (const NetworkError &e)
     {
         std::cerr << "NetworkError: " << e.what() << std::endl;
     }
-    catch (const AuthenticationError &e)
+    catch (const std::exception &e)
     {
-        std::cerr << "AuthenticationError: " << e.what() << std::endl;
+        std::cerr << "Standard exception: " << e.what() << std::endl;
     }
     catch (...)
     {
