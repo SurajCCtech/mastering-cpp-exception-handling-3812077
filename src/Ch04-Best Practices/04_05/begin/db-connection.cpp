@@ -10,7 +10,7 @@ private:
     //char *buffer;       // Raw pointer for database connection data
     std::unique_ptr <char[]> buffer;
     //std::FILE *logFile; // Raw FILE handle for logging
-    std::fstream *logFile;
+    std::fstream logFile;
 
 public:
     DatabaseConnection() : buffer(std::make_unique<char[]>(1024)), logFile("dbLog.txt", std::ios::out | std::ios::app)
